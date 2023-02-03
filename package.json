@@ -15,6 +15,7 @@
   "dependencies": {
     "gsap": "^3.11.3",
     "lodash-es": "^4.17.21",
-    "vue-confetti": "^2.3.0"
+    "vue-confetti": "^2.3.0",
+    "vue-router": "^4.1.6"
   }
 }

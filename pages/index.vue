@@ -7,28 +7,58 @@
     <div class="column flex flex-col p-5">
       <img src="~/assets/WST.jpg" alt="鸣谢WST赞助" class="mt-auto flex-justify center m-5 scale-125 origin-bottom-left" />
     </div>
-    <main class="m-auto w-1/2 min-w-fit overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur bg-white bg-opacity-60">
-      <DigitDisplaydigit
+    <main class="m-auto mt-60 w-1/2 min-w-fit overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur bg-white bg-opacity-60">
+      <div class="center_column">
+        <DigitDisplay1
         class="my-8"
-        :target="dispNum"
-        :digit="digitNum"
+        :target="dispNum1"
         @animation-start="loading = true"
         @animation-end="onAnimationEnd()"
-        @animation-update="loading = false"
-      />
-      <div class="flex justify-center my-8">
-        <button
-          @click="draw()"
-          :disabled="loading"
-          :class="{
-            'bg-gray-300': loading,
-            'bg-red-500 hover:bg-red-600 active:bg-red-700 active:shadow-inner shadow-md': !loading,
-          }"
-          class="text-white text-5xl font-medium rounded-full px-8 py-2 transition-all duration-200 disabled:cursor-wait"
-        >
-          {{ loading ? 'Loading...' : 'Draw' }}
-        </button>
+        />
+        <DigitDisplay2
+        class="my-8"
+        :target="dispNum2"
+        @animation-start="loading = true"
+        @animation-end="onAnimationEnd()"
+        />
       </div>
+      <div class="center_column">
+        <DigitDisplay3
+        class="my-8"
+        :target="dispNum3"
+        @animation-start="loading = true"
+        @animation-end="onAnimationEnd()"
+        />
+        <div class="flex justify-center my-8">
+          <button
+            @click="draw()"
+            :disabled="loading"
+            :class="{
+              'bg-gray-300': loading,
+              'bg-red-500 hover:bg-red-600 active:bg-red-700 active:shadow-inner shadow-md': !loading,
+            }"
+            class="text-white text-5xl font-medium rounded-full px-8 py-2 transition-all duration-200 disabled:cursor-wait"
+          >
+          {{ loading ? 'Loading...' : 'Draw' }}
+          </button>
+        </div>
+      </div>
+      <div class="center_column">
+        <DigitDisplay4
+        class="my-8"
+        :target="dispNum4"
+        @animation-start="loading = true"
+        @animation-end="onAnimationEnd()"
+        />
+        <DigitDisplay
+        class="my-8"
+        :target="dispNum"
+        @animation-start="loading = true"
+        @animation-end="onAnimationEnd()"
+        />
+      </div>
+      
+      
     </main>
     <div class="column flex flex-col p-5">
       <img src="~/assets/UTA.png" alt="鸣谢Weeee赞助" class="mt-auto flex-justify center m-5 scale-110 origin-bottom-right"/>
@@ -40,46 +70,26 @@
 </template>
 
 <script setup lang="ts">
-import DigitDisplaydigit from '~~/components/DigitDisplaydigit.vue';
-
 const { $confetti } = useNuxtApp().vueApp.config.globalProperties
 console.log(useNuxtApp().vueApp)
 const dispNum = ref<number>(0)
-const digitNum = ref<number>(2)
+const dispNum1 = ref<number>(0)
+const dispNum2 = ref<number>(0)
+const dispNum3 = ref<number>(0)
+const dispNum4 = ref<number>(0)
 const loading = ref<boolean>(false)
 const lotterylist = Array.from({length: 300}, (_, i) => i + 1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-
-
 const draw = () => {
-  if (digitNum.value == 2) {
-    console.log('end')
-    digitNum.value = 0
-    dispNum.value = lotterylist[Math.floor(Math.random() * lotterylist.length)]
-    lotterylist.splice(lotterylist.indexOf(dispNum.value),1)
-    console.log(dispNum.value)
-  } else {
-    console.log('next')
-    digitNum.value += 1
-  }
+  dispNum.value = lotterylist[Math.floor(Math.random() * lotterylist.length)]
+  lotterylist.splice(lotterylist.indexOf(dispNum.value),1)
+  dispNum1.value = lotterylist[Math.floor(Math.random() * lotterylist.length)]
+  lotterylist.splice(lotterylist.indexOf(dispNum1.value),1)
+  dispNum2.value = lotterylist[Math.floor(Math.random() * lotterylist.length)]
+  lotterylist.splice(lotterylist.indexOf(dispNum2.value),1)
+  dispNum3.value = lotterylist[Math.floor(Math.random() * lotterylist.length)]
+  lotterylist.splice(lotterylist.indexOf(dispNum3.value),1)
+  dispNum4.value = lotterylist[Math.floor(Math.random() * lotterylist.length)]
+  lotterylist.splice(lotterylist.indexOf(dispNum4.value),1)
 }
 
 const onAnimationEnd = () => {
@@ -103,6 +113,11 @@ const onAnimationEnd = () => {
 .column {
   float: left;
   width: 25%;
-  padding: 20px;
+  padding: 10px;
+}
+.center_column {
+  float: left;
+  width: 33.3%;
+  padding: 15px;
 }
 </style>
