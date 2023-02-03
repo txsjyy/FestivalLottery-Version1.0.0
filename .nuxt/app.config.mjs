@@ -1,5 +1,5 @@
 
-import { defuFn } from '/Users/yinuo/VScodeProjects/lottery-combined/node_modules/defu/dist/defu.mjs'
+import { defuFn } from '/Users/junyuyao/Desktop/lottery-combined/node_modules/defu/dist/defu.mjs'
 
 const inlineConfig = {}
 

@@ -6,10 +6,10 @@
     "module": true,
     "resourceType": "script"
   },
-  "/Users/yinuo/VScodeProjects/lottery-combined/node_modules/nuxt/dist/app/entry.mjs": {
+  "/Users/junyuyao/Desktop/lottery-combined/node_modules/nuxt/dist/app/entry.mjs": {
     "resourceType": "script",
     "module": true,
     "isEntry": true,
-    "file": "/Users/yinuo/VScodeProjects/lottery-combined/node_modules/nuxt/dist/app/entry.mjs"
+    "file": "/Users/junyuyao/Desktop/lottery-combined/node_modules/nuxt/dist/app/entry.mjs"
   }
 }

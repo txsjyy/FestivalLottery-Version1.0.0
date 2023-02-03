@@ -16,7 +16,7 @@
       />
       <div class="flex justify-center my-8">
         <button
-          @click="draw()"
+          @click="draw1()"
           :disabled="loading"
           :class="{
             'bg-gray-300': loading,
@@ -49,18 +49,9 @@ const lotterylist = Array.from({length: 300}, (_, i) => i + 1)
 // lotterylist.splice(lotterylist.indexOf(2),1) 
 // lotterylist.splice(lotterylist.indexOf(3),1)
 // lotterylist.splice(lotterylist.indexOf(4),1)
-// lotterylist.splice(lotterylist.indexOf(5),1)
-// lotterylist.splice(lotterylist.indexOf(6),1)
-// lotterylist.splice(lotterylist.indexOf(7),1)
-// lotterylist.splice(lotterylist.indexOf(8),1)
-// lotterylist.splice(lotterylist.indexOf(9),1)
-// lotterylist.splice(lotterylist.indexOf(10),1)
-// lotterylist.splice(lotterylist.indexOf(11),1)
-// lotterylist.splice(lotterylist.indexOf(12),1)
-// lotterylist.splice(lotterylist.indexOf(13),1)
-// lotterylist.splice(lotterylist.indexOf(14),1)
 
-const draw = () => {
+
+const draw1 = () => {
   dispNum.value = lotterylist[Math.floor(Math.random() * lotterylist.length)]
   lotterylist.splice(lotterylist.indexOf(dispNum.value),1)
 }

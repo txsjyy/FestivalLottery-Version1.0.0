@@ -6159,15 +6159,15 @@ module.exports = {
   "content": {
     "relative": false,
     "files": [
-      "/Users/yinuo/VScodeProjects/lottery-combined/components/**/*.{vue,js,ts}",
-      "/Users/yinuo/VScodeProjects/lottery-combined/layouts/**/*.vue",
-      "/Users/yinuo/VScodeProjects/lottery-combined/pages/**/*.vue",
-      "/Users/yinuo/VScodeProjects/lottery-combined/composables/**/*.{js,ts}",
-      "/Users/yinuo/VScodeProjects/lottery-combined/plugins/**/*.{js,ts}",
-      "/Users/yinuo/VScodeProjects/lottery-combined/App.{js,ts,vue}",
-      "/Users/yinuo/VScodeProjects/lottery-combined/app.{js,ts,vue}",
-      "/Users/yinuo/VScodeProjects/lottery-combined/Error.{js,ts,vue}",
-      "/Users/yinuo/VScodeProjects/lottery-combined/error.{js,ts,vue}"
+      "/Users/junyuyao/Desktop/lottery-combined/components/**/*.{vue,js,ts}",
+      "/Users/junyuyao/Desktop/lottery-combined/layouts/**/*.vue",
+      "/Users/junyuyao/Desktop/lottery-combined/pages/**/*.vue",
+      "/Users/junyuyao/Desktop/lottery-combined/composables/**/*.{js,ts}",
+      "/Users/junyuyao/Desktop/lottery-combined/plugins/**/*.{js,ts}",
+      "/Users/junyuyao/Desktop/lottery-combined/App.{js,ts,vue}",
+      "/Users/junyuyao/Desktop/lottery-combined/app.{js,ts,vue}",
+      "/Users/junyuyao/Desktop/lottery-combined/Error.{js,ts,vue}",
+      "/Users/junyuyao/Desktop/lottery-combined/error.{js,ts,vue}"
     ],
     "extract": {},
     "transform": {}

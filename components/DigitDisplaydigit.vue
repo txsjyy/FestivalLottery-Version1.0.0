@@ -16,7 +16,7 @@ const emits = defineEmits<{
   (event: 'animation-end'): void,
   (event: 'animation-update'): void
 }>()
-const startTicks = [0, 0, 0]
+var startTicks = [0, 0, 0]
 var animateData: {
     shuffled: string[];
     ticks: number;
@@ -31,6 +31,7 @@ const display = reactive(['0', '0', '0'])
 watch(() => props.target, (newTarget) => {
   emits('animation-start')
   // recevie new target
+  startTicks=[0,0,0]
   const target = newTarget.toString().padStart(3, '0').split('')
   // shuffle and calculate ticks
   animateData = range(0, 3).map(i => {

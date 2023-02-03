@@ -78,7 +78,9 @@ const dispNum2 = ref<number>(0)
 const dispNum3 = ref<number>(0)
 const dispNum4 = ref<number>(0)
 const loading = ref<boolean>(false)
+
 const lotterylist = Array.from({length: 300}, (_, i) => i + 1)
+
 const draw = () => {
   dispNum.value = lotterylist[Math.floor(Math.random() * lotterylist.length)]
   lotterylist.splice(lotterylist.indexOf(dispNum.value),1)
