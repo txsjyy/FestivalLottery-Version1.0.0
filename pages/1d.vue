@@ -1,7 +1,15 @@
 <template>
+  <div>
+    <nav>
+    <ul>
+      <li><a href="/1d">特等奖</a></li>
+      <li><a href="/1n">大奖</a></li>
+      <li><a href="/">幸运奖</a></li>
+    </ul>
+    </nav>
+  </div>
   <div class="flex h-screen bg-center bg-no-repeat bg-cover bg-hero-pattern">
     <header class="absolute w-screen flex items-center justify-center pt-[10vh]">
-      <!-- <img src="../assets/UTCSSA.jpg" class="scale-50" alt="UTCSSA" > -->
       <img src="../assets/font.jpg" class = "scale-150 pb-40" alt="兔年新春晚会抽奖" >
     </header>
     <div class="column flex flex-col p-5">
@@ -40,7 +48,6 @@
 </template>
 
 <script setup lang="ts">
-import DigitDisplaydigit from '~~/components/DigitDisplaydigit.vue';
 
 const { $confetti } = useNuxtApp().vueApp.config.globalProperties
 console.log(useNuxtApp().vueApp)
@@ -48,15 +55,6 @@ const dispNum = ref<number>(0)
 const digitNum = ref<number>(2)
 const loading = ref<boolean>(false)
 const lotterylist = Array.from({length: 300}, (_, i) => i + 1)
-// lotterylist.splice(lotterylist.indexOf(1),1)
-// lotterylist.splice(lotterylist.indexOf(2),1)
-// lotterylist.splice(lotterylist.indexOf(3),1)
-// lotterylist.splice(lotterylist.indexOf(4),1)
-// lotterylist.splice(lotterylist.indexOf(5),1)
-// lotterylist.splice(lotterylist.indexOf(6),1)
-// lotterylist.splice(lotterylist.indexOf(7),1)
-// lotterylist.splice(lotterylist.indexOf(8),1)
-// lotterylist.splice(lotterylist.indexOf(9),1)
 
 
 
@@ -90,10 +88,30 @@ const onAnimationEnd = () => {
 }
 </script>
 
-<style scoped>
+<style >
 .column {
   float: left;
   width: 25%;
   padding: 20px;
+}
+nav {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  margin: 0 10px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
 }
 </style>

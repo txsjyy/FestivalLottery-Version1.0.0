@@ -1,4 +1,13 @@
 <template>
+  <div>
+    <nav>
+    <ul>
+      <li><a href="/1d">特等奖</a></li>
+      <li><a href="/1n">大奖</a></li>
+      <li><a href="/">幸运奖</a></li>
+    </ul>
+    </nav>
+  </div>
   <div class="flex h-screen bg-center bg-no-repeat bg-cover bg-hero-pattern">
     <header class="absolute w-screen flex items-center justify-center pt-[10vh]">
       <!-- <img src="../assets/UTCSSA.jpg" class="scale-50" alt="UTCSSA" > -->
@@ -111,7 +120,7 @@ const onAnimationEnd = () => {
 }
 </script>
 
-<style scoped>
+<style>
 .column {
   float: left;
   width: 25%;
@@ -121,5 +130,25 @@ const onAnimationEnd = () => {
   float: left;
   width: 33.3%;
   padding: 15px;
+}
+nav {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  margin: 0 10px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
 }
 </style>
