@@ -51,7 +51,8 @@ console.log(useNuxtApp().vueApp)
 const dispNum = ref<number>(0)
 const digitNum = ref<number>(2)
 const loading = ref<boolean>(false)
-const lotterylist = Array.from({length: 300}, (_, i) => i + 1)
+const maxlotnum = 300
+const lotterylist = Array.from({length: maxlotnum}, (_, i) => i + 1)
 
 
 const draw1 = () => {
@@ -59,17 +60,15 @@ const draw1 = () => {
   lotterylist.splice(lotterylist.indexOf(dispNum.value),1)
 }
 
+const confettiSettings = {
+  particlesPerFrame: 2,
+  defaultDropRate: 15,
+  particles: [{ type: 'circle' }, { type: 'heart' }, { type: 'rect' }]
+};
+
 const onAnimationEnd = () => {
-  loading.value = false
-  $confetti.start({
-    particlesPerFrame: 2,
-    defaultDropRate: 15,
-    particles: [
-      { type: 'circle' },
-      { type: 'heart' },
-      { type: 'rect' },
-    ]
-  })
+  loading.value = false;
+  $confetti.start(confettiSettings);
   setTimeout(() => {
     $confetti.stop()
   }, 2000)

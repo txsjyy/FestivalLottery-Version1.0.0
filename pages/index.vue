@@ -87,8 +87,8 @@ const dispNum2 = ref<number>(0)
 const dispNum3 = ref<number>(0)
 const dispNum4 = ref<number>(0)
 const loading = ref<boolean>(false)
-
-const lotterylist = Array.from({length: 300}, (_, i) => i + 1)
+const maxlotnum = 300
+const lotterylist = Array.from({length: maxlotnum}, (_, i) => i + 1)
 
 const drawNumber = () => {
   const number = lotterylist[Math.floor(Math.random() * lotterylist.length)];
@@ -102,7 +102,7 @@ const draw = () => {
   });
 }
 
-// Pre-defined confetti settings
+
 const confettiSettings = {
   particlesPerFrame: 2,
   defaultDropRate: 15,
