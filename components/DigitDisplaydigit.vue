@@ -18,7 +18,7 @@ const emits = defineEmits<{
 }>()
 var startTicks = [0, 0, 0]
 var animateData: {
-    shuffled: string[];
+    shuffled: number[];
     ticks: number;
 }[]
 var onComplete = () => {
@@ -32,12 +32,13 @@ watch(() => props.target, (newTarget) => {
   emits('animation-start')
   // recevie new target
   startTicks=[0,0,0]
-  const target = newTarget.toString().padStart(3, '0').split('')
+  const target = newTarget.toString().padStart(3, '0').split('').map(Number)
   // shuffle and calculate ticks
   animateData = range(0, 3).map(i => {
-    const shuffled = shuffle(range(0, 10)).map(String)
-    const targetIndex = shuffled.indexOf(target[i])
-    const ticks = 10 * (i + 7) + targetIndex
+    const shuffled = i === 0 ? shuffle(range(0, 4)) : shuffle(range(0, 10));
+    const targetIndex = shuffled.indexOf(target[i]);
+    const ticks = i === 0 ? 4 * (i + 7) + targetIndex : 10 * (i + 7) + targetIndex;
+    return { shuffled, ticks }
     return { shuffled, ticks }
   })
   onComplete = () => {
@@ -45,8 +46,8 @@ watch(() => props.target, (newTarget) => {
   }
   // first draw
   onUpdate = () => {
-      const displayIndex = Math.round(startTicks[0]) % 10
-      display[0] = animateData[0].shuffled[displayIndex]
+      const displayIndex = Math.round(startTicks[0]) % 4
+      display[0] = animateData[0].shuffled[displayIndex].toString()
       display[1] = "0"
       display[2] = "0"
     }
@@ -65,7 +66,7 @@ watch(() => props.digit, (newDigit) => {
     // third digit change
     onUpdate = () => {
       const displayIndex = Math.round(startTicks[1]) % 10
-      display[1] = animateData[1].shuffled[displayIndex]
+      display[1] = animateData[1].shuffled[displayIndex].toString()
     }
     gsap.timeline({ onUpdate, onComplete })
     .to(startTicks, { '1': animateData[1].ticks, duration: 5 }, 0)
@@ -78,7 +79,7 @@ watch(() => props.digit, (newDigit) => {
     // third digit change
     onUpdate = () => {
       const displayIndex = Math.round(startTicks[2]) % 10
-      display[2] = animateData[2].shuffled[displayIndex]
+      display[2] = animateData[2].shuffled[displayIndex].toString()
     }
     gsap.timeline({ onUpdate, onComplete })
     .to(startTicks, { '2': animateData[2].ticks, duration: 5 }, 0)
