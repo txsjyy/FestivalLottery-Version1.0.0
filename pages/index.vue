@@ -18,13 +18,13 @@
     </div>
     <main class="m-auto mt-60 w-1/2 min-w-fit overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur bg-white bg-opacity-60">
       <div class="center_column">
-        <DigitDisplay1
+        <DigitDisplay
         class="my-8"
         :target="dispNum1"
         @animation-start="loading = true"
         @animation-end="onAnimationEnd()"
         />
-        <DigitDisplay2
+        <DigitDisplay
         class="my-8"
         :target="dispNum2"
         @animation-start="loading = true"
@@ -32,7 +32,7 @@
         />
       </div>
       <div class="center_column">
-        <DigitDisplay3
+        <DigitDisplay
         class="my-8"
         :target="dispNum3"
         @animation-start="loading = true"
@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="center_column">
-        <DigitDisplay4
+        <DigitDisplay
         class="my-8"
         :target="dispNum4"
         @animation-start="loading = true"
@@ -90,30 +90,28 @@ const loading = ref<boolean>(false)
 
 const lotterylist = Array.from({length: 300}, (_, i) => i + 1)
 
-const draw = () => {
-  dispNum.value = lotterylist[Math.floor(Math.random() * lotterylist.length)]
-  lotterylist.splice(lotterylist.indexOf(dispNum.value),1)
-  dispNum1.value = lotterylist[Math.floor(Math.random() * lotterylist.length)]
-  lotterylist.splice(lotterylist.indexOf(dispNum1.value),1)
-  dispNum2.value = lotterylist[Math.floor(Math.random() * lotterylist.length)]
-  lotterylist.splice(lotterylist.indexOf(dispNum2.value),1)
-  dispNum3.value = lotterylist[Math.floor(Math.random() * lotterylist.length)]
-  lotterylist.splice(lotterylist.indexOf(dispNum3.value),1)
-  dispNum4.value = lotterylist[Math.floor(Math.random() * lotterylist.length)]
-  lotterylist.splice(lotterylist.indexOf(dispNum4.value),1)
+const drawNumber = () => {
+  const number = lotterylist[Math.floor(Math.random() * lotterylist.length)];
+  lotterylist.splice(lotterylist.indexOf(number), 1);
+  return number;
 }
 
+const draw = () => {
+  [dispNum, dispNum1, dispNum2, dispNum3, dispNum4].forEach(ref => {
+    ref.value = drawNumber();
+  });
+}
+
+// Pre-defined confetti settings
+const confettiSettings = {
+  particlesPerFrame: 2,
+  defaultDropRate: 15,
+  particles: [{ type: 'circle' }, { type: 'heart' }, { type: 'rect' }]
+};
+
 const onAnimationEnd = () => {
-  loading.value = false
-  $confetti.start({
-    particlesPerFrame: 2,
-    defaultDropRate: 15,
-    particles: [
-      { type: 'circle' },
-      { type: 'heart' },
-      { type: 'rect' },
-    ]
-  })
+  loading.value = false;
+  $confetti.start(confettiSettings);
   setTimeout(() => {
     $confetti.stop()
   }, 2000)

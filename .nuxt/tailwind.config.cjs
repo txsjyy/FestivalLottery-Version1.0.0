@@ -6159,15 +6159,15 @@ module.exports = {
   "content": {
     "relative": false,
     "files": [
-      "/Users/junyuyao/Desktop/lottery-combined/components/**/*.{vue,js,ts}",
-      "/Users/junyuyao/Desktop/lottery-combined/layouts/**/*.vue",
-      "/Users/junyuyao/Desktop/lottery-combined/pages/**/*.vue",
-      "/Users/junyuyao/Desktop/lottery-combined/composables/**/*.{js,ts}",
-      "/Users/junyuyao/Desktop/lottery-combined/plugins/**/*.{js,ts}",
-      "/Users/junyuyao/Desktop/lottery-combined/App.{js,ts,vue}",
-      "/Users/junyuyao/Desktop/lottery-combined/app.{js,ts,vue}",
-      "/Users/junyuyao/Desktop/lottery-combined/Error.{js,ts,vue}",
-      "/Users/junyuyao/Desktop/lottery-combined/error.{js,ts,vue}"
+      "C:/Users/He Tianxing/Documents/truelot/lottery-combined/components/**/*.{vue,js,ts}",
+      "C:/Users/He Tianxing/Documents/truelot/lottery-combined/layouts/**/*.vue",
+      "C:/Users/He Tianxing/Documents/truelot/lottery-combined/pages/**/*.vue",
+      "C:/Users/He Tianxing/Documents/truelot/lottery-combined/composables/**/*.{js,ts}",
+      "C:/Users/He Tianxing/Documents/truelot/lottery-combined/plugins/**/*.{js,ts}",
+      "C:/Users/He Tianxing/Documents/truelot/lottery-combined/App.{js,ts,vue}",
+      "C:/Users/He Tianxing/Documents/truelot/lottery-combined/app.{js,ts,vue}",
+      "C:/Users/He Tianxing/Documents/truelot/lottery-combined/Error.{js,ts,vue}",
+      "C:/Users/He Tianxing/Documents/truelot/lottery-combined/error.{js,ts,vue}"
     ],
     "extract": {},
     "transform": {}

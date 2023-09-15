@@ -1,1 +1,1 @@
-export { default } from "file:///Users/junyuyao/Desktop/lottery-combined/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
+export { default } from "file:///C:/Users/He%20Tianxing/Documents/truelot/lottery-combined/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
