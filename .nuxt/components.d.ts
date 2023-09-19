@@ -2,10 +2,6 @@
 declare module 'vue' {
   export interface GlobalComponents {
     'DigitDisplay': typeof import("../components/DigitDisplay.vue")['default']
-    'DigitDisplay1': typeof import("../components/DigitDisplay1.vue")['default']
-    'DigitDisplay2': typeof import("../components/DigitDisplay2.vue")['default']
-    'DigitDisplay3': typeof import("../components/DigitDisplay3.vue")['default']
-    'DigitDisplay4': typeof import("../components/DigitDisplay4.vue")['default']
     'DigitDisplaydigit': typeof import("../components/DigitDisplaydigit.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
     'NuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/layout")['default']
@@ -26,10 +22,6 @@ declare module 'vue' {
     'Html': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'LazyDigitDisplay': typeof import("../components/DigitDisplay.vue")['default']
-    'LazyDigitDisplay1': typeof import("../components/DigitDisplay1.vue")['default']
-    'LazyDigitDisplay2': typeof import("../components/DigitDisplay2.vue")['default']
-    'LazyDigitDisplay3': typeof import("../components/DigitDisplay3.vue")['default']
-    'LazyDigitDisplay4': typeof import("../components/DigitDisplay4.vue")['default']
     'LazyDigitDisplaydigit': typeof import("../components/DigitDisplaydigit.vue")['default']
     'LazyNuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
     'LazyNuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/layout")['default']
@@ -53,10 +45,6 @@ declare module 'vue' {
 }
 
 export const DigitDisplay: typeof import("../components/DigitDisplay.vue")['default']
-export const DigitDisplay1: typeof import("../components/DigitDisplay1.vue")['default']
-export const DigitDisplay2: typeof import("../components/DigitDisplay2.vue")['default']
-export const DigitDisplay3: typeof import("../components/DigitDisplay3.vue")['default']
-export const DigitDisplay4: typeof import("../components/DigitDisplay4.vue")['default']
 export const DigitDisplaydigit: typeof import("../components/DigitDisplaydigit.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/layout")['default']
@@ -77,10 +65,6 @@ export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const LazyDigitDisplay: typeof import("../components/DigitDisplay.vue")['default']
-export const LazyDigitDisplay1: typeof import("../components/DigitDisplay1.vue")['default']
-export const LazyDigitDisplay2: typeof import("../components/DigitDisplay2.vue")['default']
-export const LazyDigitDisplay3: typeof import("../components/DigitDisplay3.vue")['default']
-export const LazyDigitDisplay4: typeof import("../components/DigitDisplay4.vue")['default']
 export const LazyDigitDisplaydigit: typeof import("../components/DigitDisplaydigit.vue")['default']
 export const LazyNuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const LazyNuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/layout")['default']

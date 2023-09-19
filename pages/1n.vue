@@ -16,7 +16,7 @@
       <img src="~/assets/WST.jpg" alt="鸣谢WST赞助" class="mt-auto flex-justify center m-5 scale-125 origin-bottom-left" />
     </div>
     <main class="m-auto w-1/2 min-w-fit overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur bg-white bg-opacity-60">
-      <DigitDisplay
+      <DigitDisplay 
         class="my-8"
         :target="dispNum"
         @animation-start="loading = true"
@@ -51,7 +51,8 @@ console.log(useNuxtApp().vueApp)
 const dispNum = ref<number>(0)
 const digitNum = ref<number>(2)
 const loading = ref<boolean>(false)
-const lotterylist = Array.from({length: 300}, (_, i) => i + 1)
+const maxlotnum = 300
+const lotterylist = Array.from({length: maxlotnum}, (_, i) => i + 1)
 
 
 const draw1 = () => {
@@ -59,17 +60,15 @@ const draw1 = () => {
   lotterylist.splice(lotterylist.indexOf(dispNum.value),1)
 }
 
+const confettiSettings = {
+  particlesPerFrame: 2,
+  defaultDropRate: 15,
+  particles: [{ type: 'circle' }, { type: 'heart' }, { type: 'rect' }]
+};
+
 const onAnimationEnd = () => {
-  loading.value = false
-  $confetti.start({
-    particlesPerFrame: 2,
-    defaultDropRate: 15,
-    particles: [
-      { type: 'circle' },
-      { type: 'heart' },
-      { type: 'rect' },
-    ]
-  })
+  loading.value = false;
+  $confetti.start(confettiSettings);
   setTimeout(() => {
     $confetti.stop()
   }, 2000)

@@ -5,7 +5,9 @@
 - [x] 抽奖逻辑
 - [x] 抽奖动画
   - [x] 数字变动
-  - [x] Confetti 🎉
+  - [x] Confetti? 🎉
+  - More...?
+- [ ] **TODO** 对接数据库
 
 ![Screenshot](screenshot.png)
 
