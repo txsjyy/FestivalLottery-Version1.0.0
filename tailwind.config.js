@@ -5,7 +5,7 @@ module.exports = {
           'weee-red': '#af1f1c',
         },
         backgroundImage: {
-            'hero-pattern': "url('/assets/bg.png')",
+            'hero-pattern': "url('/assets/bg.jpg')",
           }
       }
     }

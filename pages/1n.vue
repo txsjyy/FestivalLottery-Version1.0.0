@@ -1,20 +1,7 @@
 <template>
-  <div>
-    <nav>
-    <ul>
-      <li><a href="/1d">特等奖</a></li>
-      <li><a href="/1n">大奖</a></li>
-      <li><a href="/">幸运奖</a></li>
-    </ul>
-    </nav>
-  </div>
+  <Navbar></Navbar>
   <div class="flex h-screen bg-center bg-no-repeat bg-cover bg-hero-pattern">
-    <header class="absolute w-screen flex items-center justify-center pt-[10vh]">
-      <img src="../assets/font.jpg" class = "scale-150 pb-40" alt="兔年新春晚会抽奖" >
-    </header>
-    <div class="column flex flex-col p-5">
-      <img src="~/assets/WST.jpg" alt="鸣谢WST赞助" class="mt-auto flex-justify center m-5 scale-125 origin-bottom-left" />
-    </div>
+    <!-- <sponsorBanner1></sponsorBanner1> -->
     <main class="m-auto w-1/2 min-w-fit overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur bg-white bg-opacity-60">
       <DigitDisplay 
         class="my-8"
@@ -36,9 +23,7 @@
         </button>
       </div>
     </main>
-    <div class="column flex flex-col p-5">
-      <img src="~/assets/UTA.png" alt="鸣谢Weeee赞助" class="mt-auto flex-justify center m-5 scale-110 origin-bottom-right"/>
-    </div>
+    <!-- <sponsorBanner2></sponsorBanner2> -->
     <footer class="absolute bottom-4 w-screen text-center">
       <span class="text-slate-800">&copy; <strong>UTCSSA</strong> - Alex Kuang and Junyu Yao, 2023.</span>
     </footer>

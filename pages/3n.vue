@@ -6,13 +6,7 @@
       <div class="center_column">
         <DigitDisplay
         class="my-8"
-        :target="dispNum1"
-        @animation-start="loading = true"
-        @animation-end="onAnimationEnd()"
-        />
-        <DigitDisplay
-        class="my-8"
-        :target="dispNum2"
+        :target="dispNum"
         @animation-start="loading = true"
         @animation-end="onAnimationEnd()"
         />
@@ -20,7 +14,7 @@
       <div class="center_column">
         <DigitDisplay
         class="my-8"
-        :target="dispNum3"
+        :target="dispNum1"
         @animation-start="loading = true"
         @animation-end="onAnimationEnd()"
         />
@@ -41,13 +35,7 @@
       <div class="center_column">
         <DigitDisplay
         class="my-8"
-        :target="dispNum4"
-        @animation-start="loading = true"
-        @animation-end="onAnimationEnd()"
-        />
-        <DigitDisplay
-        class="my-8"
-        :target="dispNum"
+        :target="dispNum2"
         @animation-start="loading = true"
         @animation-end="onAnimationEnd()"
         />
@@ -66,8 +54,6 @@ console.log(useNuxtApp().vueApp)
 const dispNum = ref<number>(0)
 const dispNum1 = ref<number>(0)
 const dispNum2 = ref<number>(0)
-const dispNum3 = ref<number>(0)
-const dispNum4 = ref<number>(0)
 const loading = ref<boolean>(false)
 const lotterylist = Array.from({length: 300}, (_, i) => i + 1)
 
@@ -78,7 +64,7 @@ const drawNumber = () => {
 }
 
 const draw = () => {
-  [dispNum, dispNum1, dispNum2, dispNum3, dispNum4].forEach(ref => {
+  [dispNum, dispNum1, dispNum2].forEach(ref => {
     ref.value = drawNumber();
   });
 }
