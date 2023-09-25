@@ -1,5 +1,5 @@
 <template>
-  <Navbar></Navbar>
+  <Navbar current-page="3n"></Navbar>
   <div class="flex h-screen bg-center bg-no-repeat bg-cover bg-hero-pattern">
     <!-- <sponsorBanner1></sponsorBanner1> -->
     <main class="m-auto mt-60 w-1/2 min-w-fit overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur bg-white bg-opacity-60">
@@ -95,25 +95,5 @@ const onAnimationEnd = () => {
   float: left;
   width: 33.3%;
   padding: 15px;
-}
-nav {
-  background-color: #333;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-nav li {
-  margin: 0 10px;
-}
-nav a {
-  color: white;
-  text-decoration: none;
 }
 </style>
