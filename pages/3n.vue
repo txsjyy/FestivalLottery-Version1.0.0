@@ -43,7 +43,7 @@
     </main>
     <!-- <sponsorBanner2></sponsorBanner2> -->
     <footer class="absolute bottom-4 w-screen text-center">
-      <span class="text-slate-800">&copy; <strong>UTCSSA</strong> - Alex Kuang and Junyu Yao, 2023.</span>
+      <span class="text-slate-800">&copy; <strong>UTCSSA</strong> - Junyu Yao and Tech Department, 2024.</span>
     </footer>
   </div>
 </template>
