@@ -55,7 +55,7 @@ const dispNum = ref<number>(0)
 const dispNum1 = ref<number>(0)
 const dispNum2 = ref<number>(0)
 const loading = ref<boolean>(false)
-const lotterylist = Array.from({length: 300}, (_, i) => i + 1)
+const lotterylist = Array.from({length: 350}, (_, i) => i + 1)
 
 const drawNumber = () => {
   const number = lotterylist[Math.floor(Math.random() * lotterylist.length)];
