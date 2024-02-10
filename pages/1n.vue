@@ -36,7 +36,7 @@ console.log(useNuxtApp().vueApp)
 const dispNum = ref<number>(0)
 const digitNum = ref<number>(2)
 const loading = ref<boolean>(false)
-const maxlotnum = 350
+const maxlotnum = 310
 const lotterylist = Array.from({length: maxlotnum}, (_, i) => i + 1)
 
 

@@ -39,7 +39,7 @@ console.log(useNuxtApp().vueApp)
 const dispNum = ref<number>(0)
 const digitNum = ref<number>(2)
 const loading = ref<boolean>(false)
-const lotterylist = Array.from({length: 350}, (_, i) => i + 1)
+const lotterylist = Array.from({length: 310}, (_, i) => i + 1)
 
 
 
