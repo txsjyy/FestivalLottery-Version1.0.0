@@ -2,6 +2,12 @@
   <Navbar current-page=""></Navbar>
   <div class="flex h-screen bg-center bg-no-repeat bg-cover bg-hero-pattern">
     <!-- <sponsorBanner1></sponsorBanner1> -->
+    <div class="absolute top-4 w-screen text-center">
+    <!-- Display data once it's loaded -->
+    <div v-if="data">
+      <pre>{{ data }}</pre>
+    </div>
+  </div>
     <main class="m-auto mt-60 w-1/2 min-w-fit overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur bg-white bg-opacity-60">
       <div class="center_column">
         <DigitDisplay
@@ -61,6 +67,50 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+const data = ref(null)
+const error = ref<string | null>(null)
+const loading1 = ref(false)
+
+// Function to fetch data automatically on page setup
+onMounted(async () => {
+  await fetchData()
+})
+
+const fetchData = async () => {
+  loading.value = true
+  try {
+    const response = await fetch('/api/sheet')
+    if (!response.ok) throw new Error('Failed to fetch')
+    const jsonData = await response.json()
+    data.value = jsonData.data
+  } catch (err) {
+    error.value = err instanceof Error ? err.message : "An unexpected error occurred"
+  } finally {
+    loading1.value = false
+  }
+}
+
+// Function to write data
+const writeData = async (newData: any[]) => {
+  try {
+    const response = await fetch('/api/sheet', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ values: newData }), // Adjust the structure as needed for your sheet
+    })
+    if (!response.ok) throw new Error('Failed to write data')
+    // Optionally, fetch data again to refresh the view
+    await fetchData()
+  } catch (err) {
+    error.value = err instanceof Error ? err.message : "An unexpected error occurred"
+  }
+}
+
+
 const { $confetti } = useNuxtApp().vueApp.config.globalProperties
 console.log(useNuxtApp().vueApp)
 const dispNum = ref<number>(0)

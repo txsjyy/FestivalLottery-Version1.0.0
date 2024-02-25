@@ -4,6 +4,9 @@
     <div class="font-mono text-9xl bg-slate-200 shadow-inner rounded p-2 text-center opacity-60">{{ display[1] }}</div>
     <div class="font-mono text-9xl bg-slate-200 shadow-inner rounded p-2 text-center opacity-60">{{ display[2] }}</div>
   </div>
+  <div>
+    <button @click="draw()">Draw</button>
+  </div>
 </template>
 
 <script setup lang="ts">
